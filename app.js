@@ -1,11 +1,19 @@
-const cardFadeIn = document.getElementById("card");
+const hamburger = document.querySelector(".hamburger");
+const navMenu = document.querySelector(".nav-menu");
 
-cardFadeIn.addEventListener('mouseenter', () => {
-  cardFadeIn.style.opacity = .25;
-})
+hamburger.addEventListener("click", mobileMenu);
 
-cardFadeIn.addEventListener('mouseleave', () => {
-  cardFadeIn.style.opacity = 1;
-})
+function mobileMenu() {
+    hamburger.classList.toggle("active");
+    navMenu.classList.toggle("active");
+}
 
+const navLink = document.querySelectorAll(".nav-link");
+
+navLink.forEach(n => n.addEventListener("click", closeMenu));
+
+function closeMenu() {
+    hamburger.classList.remove("active");
+    navMenu.classList.remove("active");
+}
 
